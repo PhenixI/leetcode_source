@@ -21,6 +21,9 @@ public:
 	//11. Container With Most Water
 	void test_maxArea();
 
+	//14. 
+	void test_longestCommonPrefix();
+
 	//125
 	void test_string_isPalindrome();
 	//204

@@ -13,11 +13,13 @@ int main(){
 	//stest.test_isPalindrome();
 	//11.
 	//stest.test_maxArea();
+	//14
+	stest.test_longestCommonPrefix();
 
 	//125
 	//stest.test_string_isPalindrome();
 	//204
-	stest.test_countPrimes();
+	//stest.test_countPrimes();
 
 	//234
 	//stest.test_list_isPalindrome();

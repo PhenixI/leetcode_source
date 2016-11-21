@@ -50,6 +50,11 @@ public:
 	Input is guaranteed to be within the range from 1 to 3999.*/
 	int romanToInt(string s);
 
+	//14. Longest Common Prefix
+	//Write a function to find the longest common prefix string amongst an array of strings.
+	string longestCommonPrefix(vector<string>& strs);
+	string longestCommonPrefixVertical(vector<string>& strs);
+
 	//125. Valid Palindrome
 	/*Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 

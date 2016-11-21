@@ -343,3 +343,50 @@ int Solution::countPrimes(int n){
 	return count;
 
 }
+
+string commonPrefix(string& pre, string& next){
+	int str_size = pre.size() < next.size() ? pre.size() : next.size();
+
+	string commonPre="";
+	for (int j = 0; j < str_size; j++){
+		if (pre[j] == next[j]){
+			commonPre += pre[j];
+		}
+		else{
+			return commonPre;
+		}
+	}
+	return commonPre;
+}
+string Solution::longestCommonPrefix(vector<string>& strs){
+	int strs_size = strs.size();
+	string common_str;
+	if (strs.size() == 0) return "";
+	if (strs.size() == 1) return strs[0];
+	common_str = strs[0];
+
+	for (int i = 1; i < strs_size; i++){
+		common_str = commonPrefix(common_str, strs[i]);
+		if (common_str == ""){
+			return "";
+		}
+	}
+
+	return common_str;
+
+}
+
+string Solution::longestCommonPrefixVertical(vector<string>& strs){
+	int strs_size = strs.size();
+	if (strs.size() == 0)return "";
+	string common_str = "";
+
+	for (int i = 0; i < strs[0].size(); i++){
+		char c = strs[0][i];
+		for (int j = 0; j < strs_size; j++){
+			if (i == strs[j].size() || strs[j][i] != c)
+				return strs[0].substr(0, i);
+		}
+	}
+	return strs[0];
+}

@@ -1,4 +1,5 @@
 #include "leetcode_test.h"
+#include <iostream>
 //7.
 void Solution_Test::test_reverse1(){
 	int x = 123;
@@ -176,4 +177,17 @@ void Solution_Test::test_countPrimes(){
 
 	n = 101;
 	printf("num of prime: %d\n", solution.countPrimes(n));
+}
+
+void Solution_Test::test_longestCommonPrefix(){
+	string str = "abab";
+	string str1 = "aba";
+	string str2 = "abc";
+	vector<string> strs;
+	strs.push_back(str);
+	strs.push_back(str1);
+	strs.push_back(str2);
+	//std::cout << solution.longestCommonPrefix(strs) << endl;
+	std::cout << solution.longestCommonPrefixVertical(strs) << endl;
+	//printf("common prefix: %s\n", solution.longestCommonPrefix(strs));
 }
