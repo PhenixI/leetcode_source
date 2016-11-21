@@ -23,6 +23,8 @@ public:
 
 	//14. 
 	void test_longestCommonPrefix();
+	//15
+	void test_ThreeSum();
 
 	//28.
 	void test_strStr();
@@ -37,6 +39,9 @@ public:
 
 	//279
 	void test_numSquares();
+
+	//459
+	void test_repeatedSubstringPattern();
 };
 //test 7.
 //#include "leetcode_test.cpp"

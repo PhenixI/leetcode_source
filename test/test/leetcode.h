@@ -55,6 +55,18 @@ public:
 	string longestCommonPrefix(vector<string>& strs);
 	string longestCommonPrefixVertical(vector<string>& strs);
 
+	//15.3Sum
+	//Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+	//For example, given array S = [-1, 0, 1, 2, -1, -4],
+
+	//	A solution set is :
+	//[
+	//	[-1, 0, 1],
+	//	[-1, -1, 2]
+	//]
+
+	vector<vector<int>> threeSum(vector<int>& nums);
+
 	//28.Implement strStr()
 	// Implement strStr().
 	//Returns the index of the first occurrence of needle in haystack, or - 1 if needle is not part of haystack.
@@ -82,6 +94,11 @@ public:
 	//Given a positive integer n, find the least number of perfect square numbers(for example, 1, 4, 9, 16, ...) which sum to n.
 	//For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 	int numSquares(int n);
+
+	//459. Repeated Substring Pattern
+	//Given a non - empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+	//You may assume the given string consists of lowercase English letters only and its length will not exceed 10000.
+	bool repeatedSubstringPattern(string str);
 };
 
 //#include "leetcode.cpp"

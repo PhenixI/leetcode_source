@@ -15,9 +15,11 @@ int main(){
 	//stest.test_maxArea();
 	//14
 	//stest.test_longestCommonPrefix();
+	//15
+	stest.test_ThreeSum();
 
 	//28
-	stest.test_strStr();
+	//stest.test_strStr();
 
 	//125
 	//stest.test_string_isPalindrome();
@@ -29,4 +31,7 @@ int main(){
 
 	//279.
 	//stest.test_numSquares();
+
+	//459.
+	//stest.test_repeatedSubstringPattern();
 }
