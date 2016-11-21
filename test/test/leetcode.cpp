@@ -390,3 +390,25 @@ string Solution::longestCommonPrefixVertical(vector<string>& strs){
 	}
 	return strs[0];
 }
+
+int Solution::strStr(string haystack, string needle){
+	int index = -1;
+	int haystack_size = haystack.size();
+	int needle_size = needle.size();
+
+	if (needle_size == 0) return 0;
+
+	if (haystack_size < needle_size){
+		return -1;
+	}
+	string sub_str;
+	for (int i = 0,j=0; i <= haystack_size - needle_size; i++,j=0){
+		while (j < needle.size() && haystack[i] == needle[j]){ ++j; ++i; }
+		if (j == needle_size) return i - needle_size;
+		else i = i - j;
+		//sub_str = haystack.substr(i, needle_size);
+		//if (sub_str == needle)
+		//	return i;
+	}
+	return -1;
+}

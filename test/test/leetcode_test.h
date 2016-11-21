@@ -24,6 +24,9 @@ public:
 	//14. 
 	void test_longestCommonPrefix();
 
+	//28.
+	void test_strStr();
+
 	//125
 	void test_string_isPalindrome();
 	//204

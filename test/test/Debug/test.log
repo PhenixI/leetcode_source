@@ -1,4 +1,7 @@
-﻿  leetcode.cpp
+﻿  source.cpp
+  leetcode_test.cpp
+f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(114): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+  leetcode.cpp
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(27): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(38): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(48): warning C4018: “<”: 有符号/无符号不匹配
@@ -9,4 +12,5 @@ f:\leetcode\leetcode_source\test\test\leetcode.cpp(124): warning C4018: “<”:
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(131): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(314): warning C4018: “<=”: 有符号/无符号不匹配
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(384): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
   test.vcxproj -> F:\leetcode\leetcode_source\test\Debug\test.exe

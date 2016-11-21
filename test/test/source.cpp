@@ -14,7 +14,10 @@ int main(){
 	//11.
 	//stest.test_maxArea();
 	//14
-	stest.test_longestCommonPrefix();
+	//stest.test_longestCommonPrefix();
+
+	//28
+	stest.test_strStr();
 
 	//125
 	//stest.test_string_isPalindrome();

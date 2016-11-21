@@ -191,3 +191,10 @@ void Solution_Test::test_longestCommonPrefix(){
 	std::cout << solution.longestCommonPrefixVertical(strs) << endl;
 	//printf("common prefix: %s\n", solution.longestCommonPrefix(strs));
 }
+
+void Solution_Test::test_strStr(){
+	string str_hay = "abcdef";
+	string str_needle = "de";
+
+	std::cout << solution.strStr(str_hay, str_needle) << endl;
+}

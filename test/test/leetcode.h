@@ -55,6 +55,12 @@ public:
 	string longestCommonPrefix(vector<string>& strs);
 	string longestCommonPrefixVertical(vector<string>& strs);
 
+	//28.Implement strStr()
+	// Implement strStr().
+	//Returns the index of the first occurrence of needle in haystack, or - 1 if needle is not part of haystack.
+	int strStr(string haystack, string needle);
+
+
 	//125. Valid Palindrome
 	/*Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
