@@ -23,9 +23,14 @@ public:
 
 	//125
 	void test_string_isPalindrome();
+	//204
+	void test_countPrimes();
 
 	//234
 	void test_list_isPalindrome();
+
+	//279
+	void test_numSquares();
 };
 //test 7.
 //#include "leetcode_test.cpp"

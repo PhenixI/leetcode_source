@@ -41,6 +41,15 @@ public:
 	//Find two lines, which together with x - axis forms a container, such that the container contains the most water.
 	int maxArea(vector<int>& height);
 
+	//12. Integer to Roman
+	/*Given an integer, convert it to a roman numeral.
+	Input is guaranteed to be within the range from 1 to 3999.*/
+	string intToRoman(int num);
+	//13. Roman to Integer
+	/*Given a roman numeral, convert it to an integer.
+	Input is guaranteed to be within the range from 1 to 3999.*/
+	int romanToInt(string s);
+
 	//125. Valid Palindrome
 	/*Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
@@ -49,10 +58,19 @@ public:
 	"race a car" is not a palindrome.*/
 	bool isPalindrome(string s);
 
+	//204.Count Primes
+	//Count the number of prime numbers less than a non - negative number, n.
+	int countPrimes(int n);
+
 
 	//234. Palindrome Linked List
 	//Given a singly linked list, determine if it is a palindrome.
 	bool isPalindrome(ListNode* head);
+
+	//279. Perfect Squares
+	//Given a positive integer n, find the least number of perfect square numbers(for example, 1, 4, 9, 16, ...) which sum to n.
+	//For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
+	int numSquares(int n);
 };
 
 //#include "leetcode.cpp"

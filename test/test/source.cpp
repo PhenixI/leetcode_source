@@ -12,11 +12,16 @@ int main(){
 	//9.
 	//stest.test_isPalindrome();
 	//11.
-	stest.test_maxArea();
+	//stest.test_maxArea();
 
 	//125
 	//stest.test_string_isPalindrome();
+	//204
+	stest.test_countPrimes();
 
 	//234
 	//stest.test_list_isPalindrome();
+
+	//279.
+	//stest.test_numSquares();
 }

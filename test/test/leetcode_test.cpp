@@ -161,3 +161,19 @@ void Solution_Test::test_maxArea(){
 
 	printf("%d \n", solution.maxArea(a));
 }
+
+void Solution_Test::test_numSquares(){
+	int n = 12;
+	printf("n: %d\n", solution.numSquares(n));
+
+	n = 13;
+	printf("n: %d\n", solution.numSquares(n));
+}
+
+void Solution_Test::test_countPrimes(){
+	int n = 13;
+	printf("num of prime: %d\n", solution.countPrimes(n));
+
+	n = 101;
+	printf("num of prime: %d\n", solution.countPrimes(n));
+}

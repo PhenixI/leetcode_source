@@ -256,3 +256,90 @@ int Solution::maxArea(vector<int>& height){
 	return max_water;
 
 }
+
+
+string Solution::intToRoman(int num){
+	char* str[4][10] = {
+			{ "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" },
+			{ "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" },
+			{ "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" },
+			{ "", "M", "MM", "MMM" }
+	};
+
+	string val = "";
+	val += str[3][num / 1000 % 10];
+	val += str[2][num / 100 % 10];
+	val += str[1][num / 10 % 10];
+	val += str[0][num % 10];
+
+	return val;
+}
+
+int Solution::romanToInt(string s){
+	int tmp = 0, right = 0, left = 0;
+	for (auto c = s.rbegin(); c != s.rend(); c++){
+		switch (*c){
+		case 'I':
+			left = 1; 
+			break;
+		case 'V':
+			left = 5;
+			break;
+		case 'X':
+			left = 10;
+			break;
+		case 'L':
+			left = 50;
+			break;
+		case 'C':
+			left = 100;
+			break;
+		case 'D':
+			left = 500;
+			break;
+		case 'M':
+			left = 1000;
+		default:
+			break;
+		}
+		left >= tmp ? right += left : right -= left;
+		tmp = left;
+	}
+	return right;
+}
+
+int Solution::numSquares(int n){
+	static vector<int> dp{0};
+
+	while (dp.size() <= n){
+		int m = dp.size();
+		int squares = INT_MAX;
+		for (int i = 1; i*i <= m; ++i){
+			squares = min(squares, dp[m - i*i] + 1);
+		}
+		dp.push_back(squares);
+	}
+	return dp[n];
+
+}
+
+int Solution::countPrimes(int n){
+	//vector <bool> prime(n, true);
+	bool *prime = new bool[n];
+	for (int i = 2; i < n; i++){
+		prime[i] = true;
+	}
+	for (int i = 2; i*i < n; i++){
+		if (!prime[i])continue;
+		for (int j = i*i; j < n; j += i){
+			prime[j] = false;
+		}
+	}
+	int count = 0;
+	for (int i = 2; i < n; i++){
+		if (prime[i]) count++;
+	}
+
+	return count;
+
+}
