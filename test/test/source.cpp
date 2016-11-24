@@ -26,7 +26,7 @@ int main(){
 	//18
 	//stest.test_fourSum();
 	//19.
-	stest.test_removeNthFromEnd();
+	//stest.test_removeNthFromEnd();
 
 	//28
 	//stest.test_strStr();
@@ -35,6 +35,9 @@ int main(){
 	//stest.test_string_isPalindrome();
 	//204
 	//stest.test_countPrimes();
+
+	//206
+	stest.test_reverseList_iterative();
 
 	//234
 	//stest.test_list_isPalindrome();

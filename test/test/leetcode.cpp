@@ -764,3 +764,26 @@ ListNode* Solution::removeNthFromEnd(ListNode* head, int n)
 	//free(p);
 	return head;
 }
+
+ListNode* Solution::reverseList(ListNode* head) 
+{
+	ListNode* pre = NULL, *next = NULL;
+	while (head){
+		next = head->next;
+		head->next = pre;
+		pre = head;
+		head = next;
+	}
+	head = pre;
+	return head;
+}
+
+ListNode* Solution::reverseList_recursive(ListNode* head)
+{
+	if (head == NULL || head->next == NULL) return head;
+	ListNode* p = reverseList_recursive(head->next);
+
+	head->next->next = head;
+	head->next = NULL;
+	return p;
+}

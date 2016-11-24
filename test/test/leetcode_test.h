@@ -44,6 +44,9 @@ public:
 	//204
 	void test_countPrimes();
 
+	//206
+	void test_reverseList_iterative();
+
 	//234
 	void test_list_isPalindrome();
 

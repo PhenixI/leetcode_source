@@ -106,6 +106,10 @@ public:
 	//Count the number of prime numbers less than a non - negative number, n.
 	int countPrimes(int n);
 
+	//206.Reverse Linked List
+	//Reverse a gingly linked list
+	ListNode* reverseList(ListNode* head);
+	ListNode* reverseList_recursive(ListNode* head);
 
 	//234. Palindrome Linked List
 	//Given a singly linked list, determine if it is a palindrome.
