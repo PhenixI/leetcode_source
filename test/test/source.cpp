@@ -16,7 +16,17 @@ int main(){
 	//14
 	//stest.test_longestCommonPrefix();
 	//15
-	stest.test_ThreeSum();
+	//stest.test_ThreeSum();
+
+	//16
+	//stest.test_threeSumClosest();
+	//17
+	//stest.test_letterCombinations();
+
+	//18
+	//stest.test_fourSum();
+	//19.
+	stest.test_removeNthFromEnd();
 
 	//28
 	//stest.test_strStr();
@@ -31,6 +41,8 @@ int main(){
 
 	//279.
 	//stest.test_numSquares();
+	//454
+	//stest.test_fourSumCount();
 
 	//459.
 	//stest.test_repeatedSubstringPattern();

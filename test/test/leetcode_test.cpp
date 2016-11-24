@@ -234,3 +234,108 @@ void Solution_Test::test_ThreeSum(){
 		cout << endl;
 	}
 }
+
+void Solution_Test::test_threeSumClosest()
+{
+	vector<int> vec(4, 0);
+	vec[0] = -1;
+	vec[1] = 2;
+	vec[2] = 1;
+	vec[3] = -4;
+
+	cout << solution.threeSumClosest(vec, 1) << endl;
+}
+
+void Solution_Test::test_letterCombinations()
+{
+	string d = "23";
+	vector<string> str = solution.letterCombinations(d);
+	for (int i = 0; i < str.size(); i++){
+		cout << str[i] << endl;
+	}
+
+	d = "";
+	str = solution.letterCombinations(d);
+	for (int i = 0; i < str.size(); i++){
+		cout << str[i] << endl;
+	}
+}
+
+void Solution_Test::test_fourSum(){
+	vector<int> input;
+	input.push_back(1);
+	input.push_back(0);
+	input.push_back(-1);
+	input.push_back(0);
+	input.push_back(-2);
+	input.push_back(2);
+
+	//vector<vector<int>> result = solution.fourSum(input,0);
+	vector<vector<int>> result = solution.fourSum_unorderedmap(input, 0);
+
+	for (int j = 0; j < result.size(); j++){
+		for (int i = 0; i < result[j].size(); i++){
+			cout << result[j][i] << ' ';
+		}
+		cout << endl;
+	}
+
+	input.resize(0);
+	input.push_back(0);
+	input.push_back(0);
+	input.push_back(0);
+	input.push_back(0);
+
+	//vector<vector<int>> result = solution.fourSum(input,0);
+	result = solution.fourSum_unorderedmap(input, 0);
+
+	for (int j = 0; j < result.size(); j++){
+		for (int i = 0; i < result[j].size(); i++){
+			cout << result[j][i] << ' ';
+		}
+		cout << endl;
+	}
+}
+
+void Solution_Test::test_fourSumCount()
+{
+	vector<int> A, B, C, D;
+	A.push_back(1);
+	A.push_back(2);
+	B.push_back(-2);
+	B.push_back(-1);
+	C.push_back(-1);
+	C.push_back(2);
+	D.push_back(0);
+	D.push_back(2);
+
+	cout << solution.fourSumCount(A, B, C, D) << endl;
+
+}
+
+void Solution_Test::test_removeNthFromEnd(){
+	ListNode a(1);
+	ListNode b(2);
+	ListNode c(3);
+	ListNode d(4);
+	ListNode f(5);
+
+	a.next = &b;
+	b.next = &c;
+	c.next = &d;
+	d.next = &f;
+
+	ListNode* p = solution.removeNthFromEnd(&a, 2);
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+
+	ListNode g(1);
+
+	p = solution.removeNthFromEnd(&g, 1);
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+}

@@ -1,5 +1,7 @@
 #include "leetcode.h"
 #include <math.h>
+#include <map>
+#include <unordered_map>
 //7
 int Solution::reverse1(int x) {
 
@@ -26,7 +28,6 @@ int Solution::reverse1(int x) {
 	}
 	return y;
 }
-
 int Solution::reverse2(int x) {
 
 	long long res = 0;
@@ -37,7 +38,6 @@ int Solution::reverse2(int x) {
 	
 	return ((res<INT_MIN || res>INT_MAX)?0:res);
 }
-
 int convertToi(std::string str,bool is_pos){
 	//if (str.length() >= 11){
 	//	return 0;
@@ -112,7 +112,6 @@ int Solution::myAtoi(std::string str){
 
 	return x;
 }
-
 int Solution::myAtoi2(std::string str){
 	long long result = 0;
 	//printf("%d\n",sizeof(long));
@@ -130,7 +129,6 @@ int Solution::myAtoi2(std::string str){
 	}
 	return indicator * result;
 }
-
 bool Solution::isPalindrome(int x){
 
 	if (x < 0)return false;
@@ -162,7 +160,6 @@ bool Solution::isPalindrome(int x){
 }
 //1.reserve the later half of list
 //2.compare from beginning
-
 ListNode* reverseList(ListNode* head){
 	ListNode* prev = NULL;
 	ListNode* next = NULL;
@@ -175,7 +172,6 @@ ListNode* reverseList(ListNode* head){
 	head = prev;
 	return head;
 }
-
 bool Solution::isPalindrome(ListNode* head){
 	ListNode* next1, *next2;
 	next1 = head;
@@ -201,7 +197,6 @@ bool Solution::isPalindrome(ListNode* head){
 	}
 	return true;
 }
-
 bool Solution::isPalindrome(string s){
 	int i = 0;
 	int j = s.size()-1;
@@ -256,8 +251,6 @@ int Solution::maxArea(vector<int>& height){
 	return max_water;
 
 }
-
-
 string Solution::intToRoman(int num){
 	char* str[4][10] = {
 			{ "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" },
@@ -274,7 +267,6 @@ string Solution::intToRoman(int num){
 
 	return val;
 }
-
 int Solution::romanToInt(string s){
 	int tmp = 0, right = 0, left = 0;
 	for (auto c = s.rbegin(); c != s.rend(); c++){
@@ -307,7 +299,6 @@ int Solution::romanToInt(string s){
 	}
 	return right;
 }
-
 int Solution::numSquares(int n){
 	static vector<int> dp{0};
 
@@ -322,7 +313,6 @@ int Solution::numSquares(int n){
 	return dp[n];
 
 }
-
 int Solution::countPrimes(int n){
 	//vector <bool> prime(n, true);
 	bool *prime = new bool[n];
@@ -343,7 +333,6 @@ int Solution::countPrimes(int n){
 	return count;
 
 }
-
 string commonPrefix(string& pre, string& next){
 	int str_size = pre.size() < next.size() ? pre.size() : next.size();
 
@@ -375,7 +364,6 @@ string Solution::longestCommonPrefix(vector<string>& strs){
 	return common_str;
 
 }
-
 string Solution::longestCommonPrefixVertical(vector<string>& strs){
 	int strs_size = strs.size();
 	if (strs.size() == 0)return "";
@@ -390,7 +378,6 @@ string Solution::longestCommonPrefixVertical(vector<string>& strs){
 	}
 	return strs[0];
 }
-
 int Solution::strStr(string haystack, string needle){
 	int index = -1;
 	int haystack_size = haystack.size();
@@ -412,7 +399,6 @@ int Solution::strStr(string haystack, string needle){
 	}
 	return -1;
 }
-
 bool check(string str, int len){
 	if (str.size() % len != 0) return false;
 	for (int i = 0; i < str.size()-len; ++i){
@@ -421,7 +407,6 @@ bool check(string str, int len){
 	}
 	return true;
 }
-
 bool Solution::repeatedSubstringPattern(string str)
 {
 	if (str.size() <= 1)return false;
@@ -430,7 +415,6 @@ bool Solution::repeatedSubstringPattern(string str)
 	}
 	return false;
 }
-
 vector<vector<int>> Solution::threeSum(vector<int>& nums){
 	vector<vector<int>> result;
 	vector<int> local(3, 0);
@@ -481,4 +465,302 @@ vector<vector<int>> Solution::threeSum(vector<int>& nums){
 	}
 
 	return result;
+}
+
+int Solution::threeSumClosest(vector<int>& nums, int target)
+{
+	int min_result = INT_MAX;
+	int min_closet = INT_MAX;
+	vector<int> local(3, 0);
+	if (nums.size() < 3)
+		return INT_MAX;
+
+	sort(nums.begin(), nums.end());
+
+	int p1 = 1, p2 = nums.size() - 1;
+	for (int i = 0; i < nums.size() - 2;){
+		p1 = i + 1;
+		p2 = nums.size() - 1;
+		while (p1 < p2){
+			int sum_ = nums[i] + nums[p1] + nums[p2];
+			if (sum_ == target){
+				min_result = target;
+				return min_result;
+			}
+			else if (sum_ > target){
+				int tmp = sum_ - target;
+				if (tmp < min_closet){
+					min_closet = tmp;
+					min_result = sum_;
+				}
+				do{
+					--p2;
+				} while (p1 < p2 && nums[p2] == nums[p2 + 1]);
+			}
+			else if (sum_ < target){
+				int tmp = target - sum_;
+				if (tmp < min_closet){
+					min_closet = tmp;
+					min_result = sum_;
+				}
+				do{
+					++p1;
+				} while (p1 < p2 && nums[p1] == nums[p1 - 1]);
+			}
+		}
+
+		do{
+			++i;
+		} while (i < nums.size() - 2 && nums[i] == nums[i - 1]);
+	}
+
+	return min_result;
+}
+
+vector<vector<int>> Solution::fourSum(vector<int>& nums, int target)
+{
+	vector<vector<int>> result;
+	vector<int> local(4, 0);
+	if (nums.size() < 4)
+		return result;
+
+	sort(nums.begin(), nums.end());
+
+	if (nums[0] > 0 || nums[nums.size() - 1] < 0){
+		return result;
+	}
+
+	int p1 = 1, p2 = nums.size() - 1;
+	for (int i = 0; i < nums.size() - 3;){
+		for (int j = i + 1; j < nums.size() - 2;){
+			p1 = j + 1;
+			p2 = nums.size() - 1;
+			while (p1 < p2){
+				if (nums[i] + nums[j] + nums[p1] + nums[p2] == target){
+					local[0] = nums[i];
+					local[1] = nums[j];
+					local[2] = nums[p1];
+					local[3] = nums[p2];
+
+					result.push_back(local);
+
+					do{
+						--p2;
+					} while (p1 < p2 && nums[p2] == nums[p2 + 1]);
+					do{
+						++p1;
+					} while (p1 < p2 && nums[p1] == nums[p1 - 1]);
+				}
+				else if (nums[i] + nums[j] + nums[p1] + nums[p2] > target){
+					do{
+						--p2;
+					} while (p1 < p2 && nums[p2] == nums[p2 + 1]);
+				}
+				else if (nums[i] + nums[j] + nums[p1] + nums[p2] < target){
+					do{
+						++p1;
+					} while (p1 < p2 && nums[p1] == nums[p1 - 1]);
+				}
+			}
+			do{
+				++j;
+			} while (j < nums.size() - 2 && nums[j] == nums[j - 1]);
+
+		}
+
+		do{
+			++i;
+		} while (i < nums.size() - 3 && nums[i] == nums[i - 1]);
+	}
+
+	return result;
+
+}
+bool is_unique(vector<vector<int>>& result, vector<int> & local){
+	bool is_un = true;
+	for (int i = 0; i < result.size(); i++){
+		vector<int> tmp = result[i];
+		if (tmp[0] == local[0] && tmp[1] == local[1] && tmp[2] == local[2] && tmp[3] == local[3])
+		{
+			is_un = false;
+			break;
+		}
+	}
+	return is_un;
+}
+
+vector<vector<int>> Solution::fourSum_unorderedmap(vector<int>& nums, int target)
+{
+	vector<vector<int>> result;
+	vector<int> local(4, 0);
+	if (nums.size() < 4)
+		return result;
+
+	sort(nums.begin(), nums.end());
+
+	std::unordered_multimap<int, pair<int, int>> mapped;
+	pair<int, int> pair_index;
+	int pairsum;
+	for (int i = 0; i < nums.size() - 1;i++)
+	{
+		for (int j = i + 1; j < nums.size();j++)
+		{
+			pairsum = nums[i] + nums[j];
+			pair_index.first = i;
+			pair_index.second = j;
+			mapped.insert(pair<int, pair<int, int>>(pairsum,pair_index));// [pairsum] = pair_index;
+			/*do{
+				++j;
+			} while (j<nums.size() && nums[j] == nums[j - 1]);*/
+		}
+
+		/*do{
+			++i;
+		} while (i<nums.size() && nums[i] == nums[i - 1]);*/
+
+	}
+	int preKey = INT_MAX;
+	for (auto p : mapped){
+		int keyA = p.first;
+
+		if (preKey == keyA)
+			continue;
+
+		auto iterA = mapped.equal_range(keyA);
+		int keyB = target - keyA;
+		auto iterB = mapped.equal_range(keyB);
+		for (auto ka = iterA.first; ka != iterA.second; ka++){
+			int index0 = ka->second.first;
+			int index1 = ka->second.second;
+			for (auto kb = iterB.first; kb != iterB.second; kb++){
+				if (kb != mapped.end()){
+					int index2 = kb->second.first;
+					int index3 = kb->second.second;
+
+					if (index0 != index2 && index0 != index3 && index1 != index2 && index1 != index3){
+						local[0] = nums[index0];
+						local[1] = nums[index1];
+						local[2] = nums[index2];
+						local[3] = nums[index3];
+						sort(local.begin(), local.end());
+
+						bool isUN = is_unique(result, local);
+						if (isUN)
+							result.push_back(local);
+					}
+
+				}
+			}
+		}
+	
+
+		preKey = keyA;
+	}
+
+	return result;
+}
+
+vector<string> Solution::letterCombinations(string digits)
+{
+	vector<string> res;
+	vector<string> preres;
+
+	if (digits.size() == 0){
+		res.resize(0);
+		return res;
+	}
+
+	map<int,string> num_to_string;
+	num_to_string.insert(pair<char, string>('2', "abc"));
+	num_to_string.insert(pair<char, string>('3', "def"));
+	num_to_string.insert(pair<char, string>('4', "ghi"));
+	num_to_string.insert(pair<char, string>('5', "jkl"));
+	num_to_string.insert(pair<char, string>('6', "mno"));
+	num_to_string.insert(pair<char, string>('7', "pqrs"));
+	num_to_string.insert(pair<char, string>('8', "tuv"));
+	num_to_string.insert(pair<char, string>('9', "wxyz"));
+
+	res.push_back("");
+
+	for (int i = 0; i < digits.size(); i++){
+		string tmp = num_to_string[digits[i]];
+		for (auto c : res){
+			for (int j = 0; j < tmp.size(); j++){
+				preres.push_back(c + tmp[j]);
+			}
+		}
+
+		res = preres;
+		preres.resize(0);
+	}
+	return res;
+}
+void back(int begin, string digits, string comb, vector<string>& solution, vector<string>& letters){
+	if (begin == digits.size()){
+		solution.push_back(comb);
+		return;
+	}
+
+	for (int i = 0; i < letters[digits[begin] - '2'].size(); i++){
+		comb[begin] = letters[digits[begin] - '2'][i];
+		back(begin + 1, digits, comb, solution, letters);
+	}
+}
+vector<string> Solution::letterCombinations_backtracking(string digits){
+	if (!digits.size()){ vector<string> a; return a;}
+
+	vector<string> letters = { "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+	string comb(digits.size(), 0);
+	vector<string> solution;
+	back(0, digits, comb, solution, letters);
+	return solution;
+}
+
+//map
+int Solution::fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D)
+{
+	unordered_map<int, int> mp;
+	int count = 0;
+	int i, j;
+	for (i = 0; i < A.size(); i++)
+		for (j = 0; j < B.size(); j++){
+		    mp[A[i] + B[j]]++;
+		}
+
+	for (i = 0; i < C.size(); i++)
+		for (j = 0; j < D.size(); j++){
+		if (mp.find(-(C[i] + D[j])) != mp.end()){
+			count += mp[-(C[i] + D[j])];
+		}
+	}
+	return count;
+}
+
+ListNode* Solution::removeNthFromEnd(ListNode* head, int n)
+{
+	ListNode* p1, *p2;
+	p1 = p2 = head;
+	while (p2 && n){
+		n--;
+		p2 = p2->next;
+	}
+
+	if (!p2){
+		p1 = head;
+		head = head->next;
+		return head;
+		//free(p1);
+	}
+
+	while (p2->next){
+		p1 = p1->next;
+		p2 = p2->next;
+	}
+
+	ListNode * p = p1->next;
+	p1->next = p->next;
+	p->next = NULL;
+	//delete p;
+	//free(p);
+	return head;
 }

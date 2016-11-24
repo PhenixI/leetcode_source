@@ -26,6 +26,16 @@ public:
 	//15
 	void test_ThreeSum();
 
+	//16
+	void test_threeSumClosest();
+
+	//17
+	void test_letterCombinations();
+	//18
+	void test_fourSum();
+	//19
+	void test_removeNthFromEnd();
+
 	//28.
 	void test_strStr();
 
@@ -39,6 +49,9 @@ public:
 
 	//279
 	void test_numSquares();
+
+	//454
+	void test_fourSumCount();
 
 	//459
 	void test_repeatedSubstringPattern();
