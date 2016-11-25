@@ -87,6 +87,14 @@ public:
 	//Given a linked list, remove the nth node from the end of list and return its head.
 	ListNode* removeNthFromEnd(ListNode* head, int n);
 
+	//26.Remove Duplicates from Sorted Array
+	/*Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+	Do not allocate extra space for another array, you must do this in place with constant memory.
+	For example,
+	Given input array nums = [1, 1, 2],
+	Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.It doesn't matter what you leave beyond the new length. */
+	int removeDuplicates(vector<int>& nums);
+
 	//27.Remove Element
 	/*Given an array and a value, remove all instances of that value in place and return the new length.
 	Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -107,6 +115,20 @@ public:
 	Given 1->2->3->4->5->NULL, m = 2 and n = 4,
  	return 1->4->3->2->5->NULL.*/
 	ListNode* reverseBetween(ListNode* head, int m, int n);
+
+	//62.Unique Paths
+	/*A robot is located at the top - left corner of a m x n grid(marked 'Start' in the diagram below).
+	  The robot can only move either down or right at any point in time.The robot is trying to reach the bottom - right corner of the grid(marked 'Finish' in the diagram below).
+	  How many possible unique paths are there ?
+	*/
+	int uniquePaths_recursive(int m, int n);
+	int uniquePaths(int m, int n);
+
+	//63.Unique Paths
+	/*Follow up for "Unique Paths":
+	Now consider if some obstacles are added to the grids.How many unique paths would there be ?
+	An obstacle and empty space is marked as 1 and 0 respectively in the grid.*/
+	int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid);
 
 
 	//125. Valid Palindrome
@@ -135,6 +157,11 @@ public:
 	ListNode* reverseList(ListNode* head);
 	ListNode* reverseList_recursive(ListNode* head);
 
+	//221
+	//Maximal Square
+	//Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area. 
+	int maximalSquare(vector<vector<char>>& matrix);
+	
 	//234. Palindrome Linked List
 	//Given a singly linked list, determine if it is a palindrome.
 	bool isPalindrome(ListNode* head);

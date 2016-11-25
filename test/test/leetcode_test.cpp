@@ -437,3 +437,43 @@ void Solution_Test::test_RemoveElement()
 	cout << endl;
 
 }
+
+void Solution_Test::test_removeDuplicates()
+{
+	vector<int> num;
+	num.push_back(1);
+	num.push_back(1);
+	num.push_back(2);
+
+	int len = solution.removeDuplicates(num);
+	cout << "len: " << len << endl;
+	for (int i = 0; i < len; i++){
+		cout << num[i] << ' ';
+	}
+	cout << endl;
+}
+
+void Solution_Test::test_uniquePaths()
+{
+	int m = 3, n = 7;
+	cout << solution.uniquePaths(m, n) << endl;
+
+	m = 23, n = 12;
+	cout << solution.uniquePaths(m, n) << endl;
+}
+
+void Solution_Test::test_uniquePathsWithObstacles()
+{
+	vector<vector<int>> a = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+	cout << solution.uniquePathsWithObstacles(a);
+	cout << endl;
+	a[1][1] = 1;
+	cout << solution.uniquePathsWithObstacles(a);
+	cout << endl;
+}
+
+void Solution_Test::test_maximalSquare()
+{
+	vector<vector<char>> a = { { '1', '0', '1', '0', '0' }, { '1', '0', '1', '1', '1' }, { '1', '1', '1', '1', '1' }, { '1', '0', '0', '1', '0' } };
+	cout << solution.maximalSquare(a) << endl;
+}

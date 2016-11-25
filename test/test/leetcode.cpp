@@ -466,7 +466,6 @@ vector<vector<int>> Solution::threeSum(vector<int>& nums){
 
 	return result;
 }
-
 int Solution::threeSumClosest(vector<int>& nums, int target)
 {
 	int min_result = INT_MAX;
@@ -516,7 +515,6 @@ int Solution::threeSumClosest(vector<int>& nums, int target)
 
 	return min_result;
 }
-
 vector<vector<int>> Solution::fourSum(vector<int>& nums, int target)
 {
 	vector<vector<int>> result;
@@ -588,7 +586,6 @@ bool is_unique(vector<vector<int>>& result, vector<int> & local){
 	}
 	return is_un;
 }
-
 vector<vector<int>> Solution::fourSum_unorderedmap(vector<int>& nums, int target)
 {
 	vector<vector<int>> result;
@@ -659,7 +656,6 @@ vector<vector<int>> Solution::fourSum_unorderedmap(vector<int>& nums, int target
 
 	return result;
 }
-
 vector<string> Solution::letterCombinations(string digits)
 {
 	vector<string> res;
@@ -839,4 +835,129 @@ int Solution::removeElement(vector<int>& nums, int val){
 		}
 	}
 	return len;
+}
+
+int Solution::removeDuplicates(vector<int>& nums){
+	if (nums.size() == 0) return 0;
+	int i = 0;
+	for (int j = 1; j < nums.size(); j++) {
+		if (nums[j] != nums[i]) {
+			i++;
+			nums[i] = nums[j];
+		}
+	}
+	return i + 1;
+}
+
+int Solution::uniquePaths_recursive(int m, int n){
+	if (m == 0 || n == 0)return 0;
+	if (m == 1 && n == 1) return 1;
+	if (m == 1 && n == 2)return 1;
+	if (m == 2 && n == 1) return 1;
+	return uniquePaths_recursive(m - 1, n) + uniquePaths_recursive(m, n - 1);
+}
+
+int Solution::uniquePaths(int m, int n){
+	int **matrix = new int*[m];
+	for (int i = 0; i < m; i++)
+		matrix[i] = new int[n];
+
+	for (int i = 0; i < m; i++)
+		matrix[i][0] = 1;
+
+	for (int i = 0; i < n; i++)
+		matrix[0][i] = 1;
+
+	for (int j = 1; j < m; j++)
+		for (int i = 1; i < n; i++)
+			matrix[j][i] = matrix[j - 1][i] + matrix[j][i - 1];
+
+	return matrix[m - 1][n - 1];
+}
+
+int Solution::uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid)
+{
+	int m = obstacleGrid.size();
+	int n = obstacleGrid[0].size();
+
+	int **matrix = new int*[m];
+	for (int i = 0; i < m; i++)
+		matrix[i] = new int[n];
+
+	int endm = m;
+	for (int i = 0; i < m; i++){
+		if (obstacleGrid[i][0] == 1)
+		{
+			endm = i;
+			break;
+		}
+	}
+		
+
+	for (int i = 0; i < endm; i++)
+		matrix[i][0] = 1;
+
+	for (int i = endm; i < m; i++)
+		matrix[i][0] = 0;
+
+	int endn = n;
+	for (int i = 0; i < n; i++)
+	{
+		if (obstacleGrid[0][i] == 1){
+			endn = i;
+			break;
+		}
+	}
+		
+
+	for (int i = 0; i < endn; i++)
+		matrix[0][i] = 1;
+
+	for (int i = endn; i < n; i++)
+		matrix[0][i] = 0;
+
+	for (int j = 1; j < m; j++)
+		for (int i = 1; i < n; i++)
+		{
+		if (obstacleGrid[j][i] == 1)
+			matrix[j][i] = 0;
+		else
+			matrix[j][i] = matrix[j - 1][i] + matrix[j][i - 1];
+		}
+	return matrix[m - 1][n - 1];
+}
+
+int Solution::maximalSquare(vector<vector<char>>& matrix)
+{
+	int m = matrix.size();
+	if (m == 0) return 0;
+	int n = matrix[0].size();
+	if (n == 0)return 0;
+
+	int maxsize = 0;
+	vector<vector<int>> size(m, vector<int>(n, 0));
+	for (int i = 0; i < m; i++)
+	{
+		size[i][0] = matrix[i][0]-'0';
+		maxsize = max(maxsize, size[i][0]);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		size[0][i] = matrix[0][i]-'0';
+		maxsize = max(maxsize, size[0][i]);
+	}
+
+	for (int j = 1; j < m; j++)
+		for (int i = 1; i < n; i++)
+		{
+		if (matrix[j][i] == '1')
+		{
+			size[j][i] = min(size[j - 1][i], min(size[j][i - 1], size[j - 1][i - 1])) + 1;
+			maxsize = max(maxsize, size[j][i]);
+		}
+		}
+
+	return maxsize*maxsize;
+
 }

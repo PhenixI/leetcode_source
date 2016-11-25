@@ -35,6 +35,13 @@ public:
 	void test_fourSum();
 	//19
 	void test_removeNthFromEnd();
+	//26
+	void test_removeDuplicates();
+
+	//62
+	void test_uniquePaths();
+	//63
+	void test_uniquePathsWithObstacles();
 
 	//27
 	void test_RemoveElement();
@@ -54,6 +61,8 @@ public:
 
 	//206
 	void test_reverseList_iterative();
+	//221
+	void test_maximalSquare();
 
 	//234
 	void test_list_isPalindrome();

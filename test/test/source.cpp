@@ -27,10 +27,17 @@ int main(){
 	//stest.test_fourSum();
 	//19.
 	//stest.test_removeNthFromEnd();
+	//26
+	//stest.test_removeDuplicates();
 	//27
-	stest.test_RemoveElement();
+	//stest.test_RemoveElement();
 	//28
 	//stest.test_strStr();
+
+	//62
+	//stest.test_uniquePaths();
+	//63
+	//stest.test_uniquePathsWithObstacles();
 	//92
 	//stest.test_reverseBetween();
 
@@ -44,6 +51,8 @@ int main(){
 
 	//206
 	//stest.test_reverseList_iterative();
+	//221
+	stest.test_maximalSquare();
 
 	//234
 	//stest.test_list_isPalindrome();
