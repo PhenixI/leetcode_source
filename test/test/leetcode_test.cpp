@@ -360,3 +360,31 @@ void Solution_Test::test_reverseList_iterative()
 		p = p->next;
 	}
 }
+
+void Solution_Test::test_reverseBetween()
+{
+	ListNode a(1);
+	ListNode b(2);
+	ListNode c(3);
+	ListNode d(4);
+	ListNode f(5);
+
+	a.next = &b;
+	b.next = &c;
+	c.next = &d;
+	d.next = &f;
+
+	//ListNode* p = solution.reverseList(&a);
+	ListNode* p = solution.reverseBetween(&a,2,4);
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+
+	ListNode g(5);
+	p = solution.reverseBetween(&g, 1, 1);
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+}

@@ -39,6 +39,9 @@ public:
 	//28.
 	void test_strStr();
 
+	//92
+	void test_reverseBetween();
+
 	//125
 	void test_string_isPalindrome();
 	//204

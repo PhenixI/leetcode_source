@@ -30,6 +30,8 @@ int main(){
 
 	//28
 	//stest.test_strStr();
+	//92
+	stest.test_reverseBetween();
 
 	//125
 	//stest.test_string_isPalindrome();
@@ -37,7 +39,7 @@ int main(){
 	//stest.test_countPrimes();
 
 	//206
-	stest.test_reverseList_iterative();
+	//stest.test_reverseList_iterative();
 
 	//234
 	//stest.test_list_isPalindrome();
@@ -49,4 +51,13 @@ int main(){
 
 	//459.
 	//stest.test_repeatedSubstringPattern();
+
+	//char* b = (char*)_aligned_malloc(sizeof(char) * 17,4);
+	//for (int i = 0; i < 17; i++){
+	//	b[i] = i;
+	//}
+	//int a = *(int*)(b + 1);
+	//printf("a:%d \n", a);
+
+	//free(b);
 }

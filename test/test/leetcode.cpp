@@ -787,3 +787,18 @@ ListNode* Solution::reverseList_recursive(ListNode* head)
 	head->next = NULL;
 	return p;
 }
+
+ListNode* Solution::reverseBetween(ListNode* head, int m, int n)
+{
+	ListNode* *pre = &head,*next;
+	int steps = m;
+	while (--steps){ pre = &(*pre)->next; }
+	ListNode* cur = *pre;
+	for (int i = m; i < n; i++){
+		next = cur->next;
+		cur->next = next->next;
+		next->next = *pre;
+		*pre = next;
+	}
+	return head;
+}
