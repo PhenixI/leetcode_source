@@ -27,14 +27,18 @@ int main(){
 	//stest.test_fourSum();
 	//19.
 	//stest.test_removeNthFromEnd();
-
+	//27
+	stest.test_RemoveElement();
 	//28
 	//stest.test_strStr();
 	//92
-	stest.test_reverseBetween();
+	//stest.test_reverseBetween();
 
 	//125
 	//stest.test_string_isPalindrome();
+
+	//203
+	//stest.test_removeElements();
 	//204
 	//stest.test_countPrimes();
 

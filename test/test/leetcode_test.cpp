@@ -388,3 +388,52 @@ void Solution_Test::test_reverseBetween()
 		p = p->next;
 	}
 }
+
+void Solution_Test::test_removeElements()
+{
+	ListNode* a = new ListNode(1);
+	ListNode* b = new ListNode(2);
+	ListNode* c = new ListNode(6);
+	ListNode* d = new ListNode(3);
+	ListNode* f = new ListNode(4);
+	ListNode* g = new ListNode(5);
+	ListNode* h = new ListNode(6);
+
+	a->next = b;
+	b->next = c;
+	c->next = d;
+	d->next = f;
+	f->next = g;
+	g->next = h;
+
+	ListNode* p = solution.removeElements(a, 6);
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+
+}
+
+void Solution_Test::test_RemoveElement()
+{
+	vector<int> num;
+	num.push_back(3);
+	num.push_back(2);
+	num.push_back(2);
+	num.push_back(3);
+
+	int len = solution.removeElement(num, 3);
+	for (int i = 0; i < len; i++){
+		cout << num[i] << ' ';
+	}
+	cout << endl;
+
+	num.resize(1);
+	num[0] = 1;
+	len = solution.removeElement(num, 1);
+	for (int i = 0; i < len; i++){
+		cout << num[i] << ' ';
+	}
+	cout << endl;
+
+}

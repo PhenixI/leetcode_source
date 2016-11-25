@@ -802,3 +802,41 @@ ListNode* Solution::reverseBetween(ListNode* head, int m, int n)
 	}
 	return head;
 }
+ListNode* Solution::removeElements(ListNode* head, int val)
+{
+	if (!head)return head;
+	ListNode dummy(0);
+	dummy.next = head;
+
+	ListNode* pre = & dummy, *cur= head;
+
+	while (cur){
+		if (cur->val != val)
+		{
+			pre = cur;
+			cur = cur->next;
+		}
+		else{
+			pre->next = cur->next;
+			delete cur;
+			cur = pre->next;
+		}
+	}
+	return dummy.next;
+}
+
+int Solution::removeElement(vector<int>& nums, int val){
+	int len = nums.size();
+	for (int i = 0; i < len; i++){
+		while (nums[i] == val){
+			len = len - 1;
+			if (len != i){
+				nums[i] = nums[len];
+			}
+			else{
+				break;
+			}
+		}
+	}
+	return len;
+}

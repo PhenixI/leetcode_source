@@ -36,6 +36,8 @@ public:
 	//19
 	void test_removeNthFromEnd();
 
+	//27
+	void test_RemoveElement();
 	//28.
 	void test_strStr();
 
@@ -44,6 +46,9 @@ public:
 
 	//125
 	void test_string_isPalindrome();
+
+	//203
+	void test_removeElements();
 	//204
 	void test_countPrimes();
 

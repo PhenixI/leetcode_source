@@ -87,6 +87,15 @@ public:
 	//Given a linked list, remove the nth node from the end of list and return its head.
 	ListNode* removeNthFromEnd(ListNode* head, int n);
 
+	//27.Remove Element
+	/*Given an array and a value, remove all instances of that value in place and return the new length.
+	Do not allocate extra space for another array, you must do this in place with constant memory.
+	The order of elements can be changed.It doesn't matter what you leave beyond the new length.
+	Example:
+	Given input array nums = [3, 2, 2, 3], val = 3
+	Your function should return length = 2, with the first two elements of nums being 2.*/
+	int removeElement(vector<int>& nums, int val);
+
 
 	//28.Implement strStr()
 	// Implement strStr().
@@ -107,6 +116,15 @@ public:
 	"A man, a plan, a canal: Panama" is a palindrome.
 	"race a car" is not a palindrome.*/
 	bool isPalindrome(string s);
+
+	//203 Remove Linked List Elements
+	/*
+	Remove all elements from a linked list of integers that have value val.
+	Example
+	Given : 1 -- > 2 -- > 6 -- > 3 -- > 4 -- > 5 -- > 6, val = 6
+	Return: 1 -- > 2 -- > 3 -- > 4 -- > 5
+	*/
+	ListNode* removeElements(ListNode* head, int val);
 
 	//204.Count Primes
 	//Count the number of prime numbers less than a non - negative number, n.
