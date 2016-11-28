@@ -86,6 +86,22 @@ public:
 	//19.Remove Nth Node From End of List
 	//Given a linked list, remove the nth node from the end of list and return its head.
 	ListNode* removeNthFromEnd(ListNode* head, int n);
+	//20.Valid Parentheses
+	//Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+	bool isValid(string s);
+
+	//22.Generate Parentheses
+	//Given n pairs of parentheses, write a function to generate all combinations of well - formed parentheses.
+	//For example, given n = 3, a solution set is :
+	//[
+	//	"((()))",
+	//	"(()())",
+	//	"(())()",
+	//	"()(())",
+	//	"()()()"
+	//]
+
+	vector<string> generateParenthesis(int n);
 
 	//26.Remove Duplicates from Sorted Array
 	/*Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
@@ -109,12 +125,31 @@ public:
 	// Implement strStr().
 	//Returns the index of the first occurrence of needle in haystack, or - 1 if needle is not part of haystack.
 	int strStr(string haystack, string needle);
-	//92.Reverse Linked List II
-	/*Reverse a linked list from position m to n.Do it in - place and in one - pass.
-	For example :
-	Given 1->2->3->4->5->NULL, m = 2 and n = 4,
- 	return 1->4->3->2->5->NULL.*/
-	ListNode* reverseBetween(ListNode* head, int m, int n);
+
+	//39.Combination Sum
+	//Given a set of candidate numbers(C) and a target number(T), find all unique combinations in C where the candidate numbers sums to T.
+	//The same repeated number may be chosen from C unlimited number of times.
+	//Note:
+	//All numbers(including target) will be positive integers.
+	//The solution set must not contain duplicate combinations.
+	vector<vector<int>> combinationSum(vector<int>& candidates, int target);
+
+	//40.Combination Sum2
+	/*Given a collection of candidate numbers(C) and a target number(T), find all unique combinations in C where the candidate numbers sums to T.
+	Each number in C may only be used once in the combination.
+	Note:
+	All numbers(including target) will be positive integers.
+	The solution set must not contain duplicate combinations.*/
+	vector<vector<int>> combinationSum2(vector<int>& candidates, int target);
+
+	//46.Permutations
+	//Given a collection of distinct numbers, return all possible permutations
+	vector<vector<int>> permute(vector<int>& nums);
+	vector<vector<int>> permute_2(vector<int>& nums);
+
+	//47.PermutationsII
+	//Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+	vector<vector<int>> permuteUnique(vector<int>& nums);
 
 	//62.Unique Paths
 	/*A robot is located at the top - left corner of a m x n grid(marked 'Start' in the diagram below).
@@ -130,6 +165,12 @@ public:
 	An obstacle and empty space is marked as 1 and 0 respectively in the grid.*/
 	int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid);
 
+	//92.Reverse Linked List II
+	/*Reverse a linked list from position m to n.Do it in - place and in one - pass.
+	For example :
+	Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+	return 1->4->3->2->5->NULL.*/
+	ListNode* reverseBetween(ListNode* head, int m, int n);
 
 	//125. Valid Palindrome
 	/*Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.

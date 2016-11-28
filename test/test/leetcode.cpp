@@ -2,6 +2,7 @@
 #include <math.h>
 #include <map>
 #include <unordered_map>
+#include <stack>
 //7
 int Solution::reverse1(int x) {
 
@@ -960,4 +961,195 @@ int Solution::maximalSquare(vector<vector<char>>& matrix)
 
 	return maxsize*maxsize;
 
+}
+
+//1.if the character is opening parenthesis, push it onto the stack
+//2.if the character is a closing parenthesis:
+     // if the stack is nonempty,and the current character matches the character on top of the stack, remove the character from the top of the stack
+     // otherwise, the string is not matched
+//ignore all other characters
+bool Solution::isValid(string s)
+{
+	stack<char> pare_stack;
+	for (auto c : s){
+		if (c == '{' || c == '[' || c == '(')
+			pare_stack.push(c);
+		else
+		{
+			if (!pare_stack.empty()){
+				char c_t = pare_stack.top();
+				switch (c)
+				{
+				case '}':
+					if (c_t == '{')
+					{
+						pare_stack.pop();
+						continue;
+					}
+					else{
+						return false;
+					}
+				case ']':
+					if (c_t == '[')
+					{
+						pare_stack.pop();
+						continue;
+					}
+					else{
+						return false;
+					}
+				case ')':
+					if (c_t == '(')
+					{
+						pare_stack.pop();
+						continue;
+					}
+					else
+						return false;
+				default:
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+	}
+
+	if (pare_stack.empty())
+		return true;
+	else
+		return false;
+}
+
+void combine(vector<string> & result, string tmp, int i, int j)
+{
+	if (i == 0 && j == 0){
+		result.push_back(tmp);
+		return;
+	}
+	if (i > 0)
+		combine(result, tmp + '(', i - 1, j);
+	if (j > 0 && i < j)
+		combine(result, tmp + ')', i, j - 1);
+}
+//backtracing
+vector<string> Solution::generateParenthesis(int n)
+{
+	vector<string> result;
+	combine(result, "", n, n);
+	return result;
+}
+
+void depthSearch(int left, vector<int>& c, int index, vector<vector<int>> & ans,vector<int> & tmp)
+{
+	if (left == 0){
+		ans.push_back(tmp);
+		return;
+	}
+
+	for (int i = index; i < c.size(); i++){
+		if (left < c[i])break;
+		tmp.push_back(c[i]);
+		depthSearch(left - c[i], c, i, ans, tmp);
+		tmp.pop_back();
+	}
+}
+vector<vector<int>> Solution::combinationSum(vector<int>& candidates, int target)
+{
+	vector<vector<int>> ans;
+	vector<int> tmp;
+	sort(candidates.begin(), candidates.end());
+	depthSearch(target, candidates, 0, ans, tmp);
+
+	return ans;
+}
+
+void depthSearch2(int left, vector<int>& c, int index, vector<vector<int>> & ans, vector<int> & tmp)
+{
+	if (left == 0){
+		ans.push_back(tmp);
+		return;
+	}
+	for (int i = index; i < c.size();){
+		if (left < c[i])break;
+		tmp.push_back(c[i]);
+		depthSearch2(left - c[i], c, i+1, ans, tmp);
+		tmp.pop_back();
+		i++;
+		while (c[i] == c[i - 1])i++;
+	}
+}
+vector<vector<int>> Solution::combinationSum2(vector<int>& candidates, int target)
+{
+	vector<vector<int>> ans;
+	vector<int> tmp;
+	sort(candidates.begin(), candidates.end());
+	depthSearch2(target, candidates, 0, ans, tmp);
+
+	return ans;
+}
+
+void perm(vector<int>& nums, int index, vector<vector<int>>& result)
+{
+	if (index == nums.size()){
+		result.push_back(nums);
+		return;
+	}
+
+	for (int j = index; j < nums.size(); j++){
+		swap(nums[index], nums[j]);
+		perm(nums, index + 1, result);
+		swap(nums[j], nums[index]);
+	}
+}
+vector<vector<int>> Solution::permute(vector<int>& nums)
+{
+	vector<vector<int>> result;
+	vector<int> tmp;
+	perm(nums, 0, result);
+	return result;
+}
+
+vector<vector<int>> Solution::permute_2(vector<int>& nums)
+{
+	vector<vector<int>> permu;
+	sort(nums.begin(), nums.end());
+	permu.push_back(nums);
+	while (next_permutation(nums.begin(),nums.end()))
+	{
+		permu.push_back(nums);
+	}
+	return permu;
+
+}
+
+void move(vector<int> & num, int j, int i)
+{
+	num.insert(num.begin() + i + (i > j), num[j]);
+	num.erase(num.begin() + j + (j > i));
+}
+void perm2(vector<int>& nums, int index, vector<vector<int>>& result)
+{
+	if (index == nums.size()-1){
+		result.push_back(nums);
+		return;
+	}
+
+	for (int j = index; j < nums.size(); j++){
+		if (j != index && nums[j] == nums[j-1]) continue;
+		move(nums,j,index);
+		perm2(nums, index + 1, result);
+		move(nums, index,j);
+	}
+}
+
+
+vector<vector<int>> Solution::permuteUnique(vector<int>& nums)
+{
+	vector<vector<int>> result;
+	vector<int> tmp;
+	sort(nums.begin(), nums.end());
+	perm2(nums, 0, result);
+	return result;
 }

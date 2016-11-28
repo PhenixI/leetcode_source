@@ -27,6 +27,11 @@ int main(){
 	//stest.test_fourSum();
 	//19.
 	//stest.test_removeNthFromEnd();
+	//20
+	//stest.test_isValid();
+
+	//22.
+	//stest.test_generateParenthesis();
 	//26
 	//stest.test_removeDuplicates();
 	//27
@@ -34,6 +39,15 @@ int main(){
 	//28
 	//stest.test_strStr();
 
+	//39
+	//stest.test_combinationSum();
+	//40
+	//stest.test_combinationSum2();
+
+	//46.
+	//stest.test_Permutations();
+	//47
+	stest.test_PermutationsII();
 	//62
 	//stest.test_uniquePaths();
 	//63
@@ -52,7 +66,7 @@ int main(){
 	//206
 	//stest.test_reverseList_iterative();
 	//221
-	stest.test_maximalSquare();
+	//stest.test_maximalSquare();
 
 	//234
 	//stest.test_list_isPalindrome();

@@ -477,3 +477,78 @@ void Solution_Test::test_maximalSquare()
 	vector<vector<char>> a = { { '1', '0', '1', '0', '0' }, { '1', '0', '1', '1', '1' }, { '1', '1', '1', '1', '1' }, { '1', '0', '0', '1', '0' } };
 	cout << solution.maximalSquare(a) << endl;
 }
+
+void Solution_Test::test_isValid()
+{
+	string s = "[(){}]";
+	cout << solution.isValid(s) << endl;
+
+	s = "[";
+	cout << solution.isValid(s) << endl;
+
+	s = "]";
+	cout << solution.isValid(s) << endl;
+}
+
+void Solution_Test::test_generateParenthesis()
+{
+	int n = 3;
+	vector<string> result = solution.generateParenthesis(3);
+	for (auto s : result)
+		cout << s << endl;
+}
+
+void Solution_Test::test_combinationSum()
+{
+	vector<int> c = { 2, 3, 6, 7 };
+	
+	vector<vector<int>> result = solution.combinationSum(c,7);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << endl;
+		for (int j = 0; j < result[i].size(); j++)
+			cout << result[i][j] << ' ';
+	}
+}
+
+void Solution_Test::test_combinationSum2()
+{
+	vector<int> c = { 10, 1, 2, 7, 6, 1, 5 };
+
+	vector<vector<int>> result = solution.combinationSum2(c, 8);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << endl;
+		for (int j = 0; j < result[i].size(); j++)
+			cout << result[i][j] << ' ';
+	}
+}
+
+void Solution_Test::test_Permutations()
+{
+	vector<int> c = { 1, 2, 3 };
+	vector<vector<int>> result = solution.permute(c);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << endl;
+		for (int j = 0; j < result[i].size(); j++)
+			cout << result[i][j] << ' ';
+	}
+}
+
+void Solution_Test::test_PermutationsII()
+{
+
+	vector<int> c = { 1, 1, 2,2 };
+	vector<vector<int>> result = solution.permuteUnique(c);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << endl;
+		for (int j = 0; j < result[i].size(); j++)
+			cout << result[i][j] << ' ';
+	}
+}

@@ -35,6 +35,12 @@ public:
 	void test_fourSum();
 	//19
 	void test_removeNthFromEnd();
+
+	//20 
+	void test_isValid();
+
+	//22.
+	void test_generateParenthesis();
 	//26
 	void test_removeDuplicates();
 
@@ -47,6 +53,18 @@ public:
 	void test_RemoveElement();
 	//28.
 	void test_strStr();
+
+	//39.
+	void test_combinationSum();
+
+	//40
+	void test_combinationSum2();
+
+	//46.
+	void test_Permutations();
+
+	//47.
+	void test_PermutationsII();
 
 	//92
 	void test_reverseBetween();
