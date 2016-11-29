@@ -552,3 +552,65 @@ void Solution_Test::test_PermutationsII()
 			cout << result[i][j] << ' ';
 	}
 }
+
+void Solution_Test::test_mergeSortedList()
+{
+	ListNode a(0);
+	ListNode b(1);
+	ListNode c(0);
+	ListNode d(2);
+
+	a.next = &b;
+	c.next = &d;
+	ListNode* p = solution.mergeTwoLists(&a, &c);
+
+	while (p){
+		cout << p->val << endl;
+		p = p->next;
+	}
+}
+
+void Solution_Test::test_merge()
+{
+	vector<int> nums1(10, 0);
+	nums1[0] = 0;
+	nums1[1] = 1;
+	nums1[2] = 3;
+
+	vector<int> nums2(3, 2);
+
+	solution.merge(nums1, 3, nums2, 3);
+	for (int i = 0; i < 6; i++)
+		cout << nums1[i] << endl;
+
+	vector<int> nums3(6, 0);
+	nums3[0] = 4;
+	nums3[1] = 5;
+	nums3[2] = 6;
+
+	vector<int> nums4(3, 0);
+	nums4[0] = 1;
+	nums4[1] = 2;
+	nums4[2] = 3;
+
+	solution.merge(nums3, 3, nums4, 3);
+	for (int i = 0; i < 6; i++)
+		cout << nums3[i] << endl;
+}
+
+void Solution_Test::test_subsets(){
+	vector<int> nums(3, 0);
+	nums[0] = 1;
+	nums[1] = 2;
+	nums[2] = 3;
+
+	vector<vector<int>> subset = solution.subsets(nums);
+
+	for (int j = 0; j < subset.size(); j++){
+		for (int i = 0; i < subset[j].size(); i++){
+			cout << subset[j][i] << ' ';
+		}
+		cout << endl;
+	}
+		
+}

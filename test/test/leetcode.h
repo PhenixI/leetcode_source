@@ -90,6 +90,10 @@ public:
 	//Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 	bool isValid(string s);
 
+	//21. Merge Two Sorted Lists
+	//Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+
 	//22.Generate Parentheses
 	//Given n pairs of parentheses, write a function to generate all combinations of well - formed parentheses.
 	//For example, given n = 3, a solution set is :
@@ -165,6 +169,13 @@ public:
 	An obstacle and empty space is marked as 1 and 0 respectively in the grid.*/
 	int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid);
 
+	//78.Subsets
+	//Given a set of distinct integers, nums, return all possible subsets.
+	vector<vector<int>> subsets(vector<int>& nums);
+
+	//88.Merge Sorted Array
+	//Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+	void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
 	//92.Reverse Linked List II
 	/*Reverse a linked list from position m to n.Do it in - place and in one - pass.
 	For example :

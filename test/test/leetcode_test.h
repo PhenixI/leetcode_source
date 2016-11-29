@@ -38,7 +38,8 @@ public:
 
 	//20 
 	void test_isValid();
-
+	//21
+	void test_mergeSortedList();
 	//22.
 	void test_generateParenthesis();
 	//26
@@ -65,6 +66,12 @@ public:
 
 	//47.
 	void test_PermutationsII();
+
+	//78
+	void test_subsets();
+
+	//88.
+	void test_merge();
 
 	//92
 	void test_reverseBetween();

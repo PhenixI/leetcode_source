@@ -16,42 +16,6 @@ f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(534): warning C4018: “
 f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(537): warning C4018: “<”: 有符号/无符号不匹配
 f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(548): warning C4018: “<”: 有符号/无符号不匹配
 f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(551): warning C4018: “<”: 有符号/无符号不匹配
-  leetcode.cpp
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(30): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(40): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(49): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(63): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(65): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(75): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(124): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(131): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(306): warning C4018: “<=”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(373): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(394): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(405): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(414): warning C4018: “<=”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(432): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(465): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(481): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(514): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(533): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(534): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(566): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(572): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(580): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(602): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(604): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(682): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(685): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(701): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(722): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(723): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(727): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(728): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(844): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(1051): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(1074): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(1100): warning C4018: “<”: 有符号/无符号不匹配
-f:\leetcode\leetcode_source\test\test\leetcode.cpp(1139): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
+f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(609): warning C4018: “<”: 有符号/无符号不匹配
+f:\leetcode\leetcode_source\test\test\leetcode_test.cpp(610): warning C4018: “<”: 有符号/无符号不匹配
   test.vcxproj -> F:\leetcode\leetcode_source\test\Debug\test.exe

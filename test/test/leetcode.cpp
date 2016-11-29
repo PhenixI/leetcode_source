@@ -1144,7 +1144,6 @@ void perm2(vector<int>& nums, int index, vector<vector<int>>& result)
 	}
 }
 
-
 vector<vector<int>> Solution::permuteUnique(vector<int>& nums)
 {
 	vector<vector<int>> result;
@@ -1152,4 +1151,60 @@ vector<vector<int>> Solution::permuteUnique(vector<int>& nums)
 	sort(nums.begin(), nums.end());
 	perm2(nums, 0, result);
 	return result;
+}
+
+ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
+{
+	if (!l1)return l2;
+	if (!l2)return l1;
+
+	ListNode* p1 = l1, *p2 = l2, *head = new ListNode(0),*tmp = head;
+
+	while (p1 && p2){
+		if (p1->val <= p2->val){
+			tmp->next = p1;
+			tmp = tmp->next;
+			p1 = p1->next;
+		}
+		else{
+			tmp->next = p2;
+			tmp = tmp->next;
+			p2 = p2->next;
+		}
+	}
+
+	if (p1) tmp->next = p1;
+	if (p2) tmp->next =p2;
+
+	p1 = head;
+	head = head->next;
+	delete p1;
+	return head;
+}
+
+void Solution::merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
+{
+	int p1 = m - 1, p2 = n - 1, i = m + n - 1;
+	while (p1 >= 0 && p2 >= 0)nums1[i--] = nums2[p2] >= nums1[p1] ? nums2[p2--] : nums1[p1--];
+
+	for (int k = p1; k >= 0; k--)nums1[i--] = nums1[k];
+	for (int k = p2; k >= 0; k--)nums1[i--] = nums2[k];
+}
+
+vector<vector<int>> Solution::subsets(vector<int>& nums)
+{
+	int n = nums.size();
+	sort(nums.begin(), nums.end());
+
+	int num_subset = pow(2, n);
+	vector<vector<int>> subset(num_subset, vector<int>());
+
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < num_subset; j++)
+		{
+		if ((j >> i) & 1){
+			subset[j].push_back(nums[i]);
+		}
+		}
+	return subset;
 }

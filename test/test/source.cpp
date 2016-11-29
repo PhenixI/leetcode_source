@@ -29,7 +29,8 @@ int main(){
 	//stest.test_removeNthFromEnd();
 	//20
 	//stest.test_isValid();
-
+	//21
+	//stest.test_mergeSortedList();
 	//22.
 	//stest.test_generateParenthesis();
 	//26
@@ -47,11 +48,17 @@ int main(){
 	//46.
 	//stest.test_Permutations();
 	//47
-	stest.test_PermutationsII();
+	//stest.test_PermutationsII();
 	//62
 	//stest.test_uniquePaths();
 	//63
 	//stest.test_uniquePathsWithObstacles();
+
+	//78
+	stest.test_subsets();
+
+	//88
+	//stest.test_merge();
 	//92
 	//stest.test_reverseBetween();
 
