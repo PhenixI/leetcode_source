@@ -107,6 +107,13 @@ public:
 
 	vector<string> generateParenthesis(int n);
 
+	//24. Swap Nodes in Pairs
+	/*Given a linked list, swap every two adjacent nodes and return its head.
+	For example,
+	Given 1->2->3->4, you should return the list as 2->1->4->3.
+	Your algorithm should use only constant space.You may not modify the values in the list, only nodes itself can be changed.*/
+	ListNode* swapPairs(ListNode* head);
+
 	//26.Remove Duplicates from Sorted Array
 	/*Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 	Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -129,6 +136,11 @@ public:
 	// Implement strStr().
 	//Returns the index of the first occurrence of needle in haystack, or - 1 if needle is not part of haystack.
 	int strStr(string haystack, string needle);
+
+	//29.Divide Two Integers
+	/*Divide two integers without using multiplication, division and mod operator.
+	If it is overflow, return MAX_INT.*/
+	int divide(int dividend, int divisor);
 
 	//39.Combination Sum
 	//Given a set of candidate numbers(C) and a target number(T), find all unique combinations in C where the candidate numbers sums to T.

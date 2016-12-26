@@ -614,3 +614,29 @@ void Solution_Test::test_subsets(){
 	}
 		
 }
+
+void Solution_Test::test_swapPairs()
+{
+	ListNode a(1);
+	ListNode b(2);
+	ListNode c(3);
+	ListNode d(4);
+	a.next = &b;
+	b.next = &c;
+	c.next = &d;
+
+	ListNode* head = solution.swapPairs(&a);
+
+	ListNode* p = head;
+	while (p){
+		cout << p->val << ' ';
+		p = p->next;
+	}
+}
+
+void Solution_Test::test_divide()
+{
+	int pidend = 3;
+	int disivor = 2;
+	cout << solution.divide(pidend, disivor) << endl;
+}

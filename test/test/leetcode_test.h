@@ -42,8 +42,14 @@ public:
 	void test_mergeSortedList();
 	//22.
 	void test_generateParenthesis();
+
+	//24
+	void test_swapPairs();
 	//26
 	void test_removeDuplicates();
+
+	//29
+	void test_divide();
 
 	//62
 	void test_uniquePaths();

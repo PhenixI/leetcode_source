@@ -33,13 +33,16 @@ int main(){
 	//stest.test_mergeSortedList();
 	//22.
 	//stest.test_generateParenthesis();
+	//24
+	//stest.test_swapPairs();
 	//26
 	//stest.test_removeDuplicates();
 	//27
 	//stest.test_RemoveElement();
 	//28
 	//stest.test_strStr();
-
+	//29
+	stest.test_divide();
 	//39
 	//stest.test_combinationSum();
 	//40
@@ -55,7 +58,7 @@ int main(){
 	//stest.test_uniquePathsWithObstacles();
 
 	//78
-	stest.test_subsets();
+	//stest.test_subsets();
 
 	//88
 	//stest.test_merge();

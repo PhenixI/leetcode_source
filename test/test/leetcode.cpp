@@ -1208,3 +1208,53 @@ vector<vector<int>> Solution::subsets(vector<int>& nums)
 		}
 	return subset;
 }
+
+ListNode* Solution::swapPairs(ListNode* head)
+{
+	if (head == NULL || head->next == NULL){
+		return head;
+	}
+
+	ListNode* dummy_head = new ListNode(0);
+	dummy_head->next = head;
+
+	ListNode* p1, *p2,*pre;
+	pre = dummy_head;
+	p1 = dummy_head->next;
+	p2 = dummy_head->next->next;
+	while (1){
+		p1->next = p2->next;
+		p2->next = p1;
+		pre->next = p2;
+
+		pre = p1;
+		if (p1->next == NULL || p1->next->next == NULL)
+			break;
+		p1 = p1->next;
+		p2 = p1->next;	
+	}
+	head = dummy_head->next;
+	delete dummy_head;
+	return head;
+}
+
+int Solution::divide(int dividend, int divisor)
+{
+	if (!divisor || (dividend == INT_MIN && divisor == -1))
+		return INT_MAX;
+	int sign = ((dividend < 0) ^ (divisor < 0)) ? -1 : 1;
+	long long dvd = labs(dividend);
+	long long dvs = labs(divisor);
+
+	int res = 0;
+	while (dvd >= dvs){
+		long long temp = dvs, multiple = 1;
+		while (dvd >= (temp << 1)){
+			temp <<= 1;
+			multiple <<= 1;
+		}
+		dvd -= temp;
+		res += multiple;
+	}
+	return sign == 1 ? res : -res;
+}
