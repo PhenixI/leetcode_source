@@ -142,6 +142,9 @@ public:
 	If it is overflow, return MAX_INT.*/
 	int divide(int dividend, int divisor);
 
+	//31. Next Permutation
+	void nextPermutation(vector<int> & nums);
+
 	//39.Combination Sum
 	//Given a set of candidate numbers(C) and a target number(T), find all unique combinations in C where the candidate numbers sums to T.
 	//The same repeated number may be chosen from C unlimited number of times.
@@ -158,6 +161,10 @@ public:
 	The solution set must not contain duplicate combinations.*/
 	vector<vector<int>> combinationSum2(vector<int>& candidates, int target);
 
+	//43.Multiply Strings
+	//Given two numbers represented as strings, return multiplication of the numbers as a string
+	string multiply(string num1, string num2);
+
 	//46.Permutations
 	//Given a collection of distinct numbers, return all possible permutations
 	vector<vector<int>> permute(vector<int>& nums);
@@ -166,6 +173,41 @@ public:
 	//47.PermutationsII
 	//Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 	vector<vector<int>> permuteUnique(vector<int>& nums);
+
+	//48. Rotate Image
+	/*You are given an n x n 2D matrix representing an image.
+	Rotate the image by 90 degrees(clockwise).
+	Follow up :
+	Could you do this in - place ?*/
+	void rotate(vector<vector<int>> & matrix);
+
+	//54. Spiral Matrix
+	/*
+	Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+	For example,Given the following matrix:
+	[
+	[ 1, 2, 3 ],
+	[ 4, 5, 6 ],
+	[ 7, 8, 9 ]
+	]
+	You should return [1,2,3,6,9,8,7,4,5].
+	*/
+	vector<int> spiralOrder(vector<vector<int>> & matrix);
+
+	//59.Spiral Matrix II
+	/*Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+
+		For example,
+		Given n = 3,
+		You should return the following matrix :
+
+	[
+		[1, 2, 3],
+		[8, 9, 4],
+		[7, 6, 5]
+	]*/
+	vector<vector<int>> generateMatrix(int n);
+
 
 	//62.Unique Paths
 	/*A robot is located at the top - left corner of a m x n grid(marked 'Start' in the diagram below).
@@ -180,6 +222,12 @@ public:
 	Now consider if some obstacles are added to the grids.How many unique paths would there be ?
 	An obstacle and empty space is marked as 1 and 0 respectively in the grid.*/
 	int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid);
+
+	//66.Plus One
+	/*Given a non-negative number represented as an array of digits, plus one to the number
+	The digits are stored such that the most significant digit is at the head of the list.
+	*/
+	vector<int> plusOne(vector<int>& digits);
 
 	//78.Subsets
 	//Given a set of distinct integers, nums, return all possible subsets.
@@ -234,6 +282,19 @@ public:
 	//Given a positive integer n, find the least number of perfect square numbers(for example, 1, 4, 9, 16, ...) which sum to n.
 	//For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 	int numSquares(int n);
+
+	//442.Find All Duplicates in an Array
+	/* Given an array of integers, 1 ¡Ü a[i] ¡Ü n (n = size of array), some elements appear twice and others appear once.
+	   Find all the elements that appear twice in this array.
+	   Could you do it without extra space and in O(n) runtime?
+	*/
+	vector<int> findDuplicates(vector<int>& nums);
+
+	//448. Find All Numbers Disappeared in an array
+	/*Given an array of integers where 1 ¡Ü a[i] ¡Ü n(n = size of array), some elements appear twice and others appear once.
+    Find all the elements of[1, n] inclusive that do not appear in this array.
+	Could you do it without extra space and in O(n) runtime ? You may assume the returned list does not count as extra space.*/
+	vector<int> findDisappearedNumbers(vector<int>& nums);
 	//454.4SUM II
 	/*
 	Given four lists A, B, C, D of integer values, compute how many tuples(i, j, k, l) there are such that A[i] + B[j] + C[k] + D[l] is zero.

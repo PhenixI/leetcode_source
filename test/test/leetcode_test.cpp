@@ -640,3 +640,112 @@ void Solution_Test::test_divide()
 	int disivor = 2;
 	cout << solution.divide(pidend, disivor) << endl;
 }
+
+void Solution_Test::test_nextPermutation()
+{
+	vector<int> num(3);
+	num[0] = 1;
+	num[1] = 1;
+	num[2] = 5;
+
+	solution.nextPermutation(num);
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << num[i] << " ";
+	}
+}
+
+void Solution_Test::test_rotate()
+{
+
+}
+
+void Solution_Test::test_findDisappearedNumbers()
+{
+	vector<int> num(8);
+	num[0] = 4;
+	num[1] = 3;
+	num[2] = 2;
+	num[3] = 7;
+	num[4] = 8;
+	num[5] = 2;
+	num[6] = 3;
+	num[7] = 1;
+
+	vector<int> result = solution.findDisappearedNumbers(num);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << result[i] << " ";
+	}
+}
+
+void Solution_Test::test_findDuplicates()
+{
+	vector<int> num(8);
+	num[0] = 4;
+	num[1] = 3;
+	num[2] = 2;
+	num[3] = 7;
+	num[4] = 8;
+	num[5] = 2;
+	num[6] = 3;
+	num[7] = 1;
+
+	vector<int> result = solution.findDuplicates(num);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << result[i] << " ";
+	}
+}
+
+void Solution_Test::test_spiralOrder()
+{
+	vector<int> row0(2);
+	row0[0] = 2;
+	row0[1] = 3;
+
+	vector<vector<int>> mat;
+	mat.push_back(row0);
+
+	vector<int> res = solution.spiralOrder(mat);
+
+	for (int i = 0; i < res.size(); i++)
+		cout << res[i] << " ";
+}
+
+void Solution_Test::test_generateMatrix()
+{
+	int n = 3;
+	vector<vector<int>> mat = solution.generateMatrix(n);
+
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+		{
+		cout << mat[i][j] << " ";
+		}
+}
+
+void Solution_Test::test_PlusOne()
+{
+	vector<int> v(3);
+	v[0] = 1;
+	v[1] = 2;
+	v[2] = 3;
+
+	solution.plusOne(v);
+	for (int i = 0; i < 3; i++){
+		cout << v[i] << " ";
+	}
+}
+
+void Solution_Test::test_multiply()
+{
+	string a = "0";
+	string b = "0";
+
+	string c = solution.multiply(a, b);
+	cout << c << " ";
+}

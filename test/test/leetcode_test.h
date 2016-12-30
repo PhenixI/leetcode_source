@@ -51,10 +51,8 @@ public:
 	//29
 	void test_divide();
 
-	//62
-	void test_uniquePaths();
-	//63
-	void test_uniquePathsWithObstacles();
+	//31
+	void test_nextPermutation();
 
 	//27
 	void test_RemoveElement();
@@ -67,12 +65,31 @@ public:
 	//40
 	void test_combinationSum2();
 
+	//43.
+	void test_multiply();
+
 	//46.
 	void test_Permutations();
 
 	//47.
 	void test_PermutationsII();
 
+	//48
+	void test_rotate();
+
+	//54.
+	void test_spiralOrder();
+
+	//59
+	void test_generateMatrix();
+
+	//62
+	void test_uniquePaths();
+	//63
+	void test_uniquePathsWithObstacles();
+
+	//66
+	void test_PlusOne();
 	//78
 	void test_subsets();
 
@@ -100,9 +117,16 @@ public:
 
 	//279
 	void test_numSquares();
+	//442
+	void test_findDuplicates();
+
+	//448
+	void test_findDisappearedNumbers();
 
 	//454
 	void test_fourSumCount();
+
+
 
 	//459
 	void test_repeatedSubstringPattern();

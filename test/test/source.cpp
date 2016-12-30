@@ -42,21 +42,36 @@ int main(){
 	//28
 	//stest.test_strStr();
 	//29
-	stest.test_divide();
+	//stest.test_divide();
+
+
+	//31
+	//stest.test_nextPermutation();
+
 	//39
 	//stest.test_combinationSum();
 	//40
 	//stest.test_combinationSum2();
 
+	//43.
+	stest.test_multiply();
+
 	//46.
 	//stest.test_Permutations();
 	//47
 	//stest.test_PermutationsII();
+
+	//54
+	//stest.test_spiralOrder();
+
+	//59.
+	//stest.test_generateMatrix();
 	//62
 	//stest.test_uniquePaths();
 	//63
 	//stest.test_uniquePathsWithObstacles();
-
+	//66
+	//stest.test_PlusOne();
 	//78
 	//stest.test_subsets();
 
@@ -83,6 +98,12 @@ int main(){
 
 	//279.
 	//stest.test_numSquares();
+	//442
+	//stest.test_findDuplicates();
+
+	//448
+	//stest.test_findDisappearedNumbers();
+
 	//454
 	//stest.test_fourSumCount();
 

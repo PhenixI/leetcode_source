@@ -1258,3 +1258,234 @@ int Solution::divide(int dividend, int divisor)
 	}
 	return sign == 1 ? res : -res;
 }
+
+void Solution::nextPermutation(vector<int> & nums)
+{
+	int k = -1;
+	for (int i = nums.size() - 2; i >= 0; i--){
+		if (nums[i] < nums[i + 1]){
+			k = i;
+			break;
+		}
+	}
+
+	if (k == -1)
+	{
+		reverse(nums.begin(), nums.end());
+		return;
+	}
+
+	int l = -1;
+	for (int i = nums.size() - 1; i > k; i--)
+	{
+		if (nums[i]>nums[k])
+		{
+			l = i;
+			break;
+		}
+	}
+	swap(nums[k], nums[l]);
+	reverse(nums.begin() + k + 1, nums.end());
+}
+
+/*
+clockwise rotate
+first reverse up to down, the swap the symmetry
+* 1 2 3     7 8 9     7 4 1
+* 4 5 6  => 4 5 6  => 8 5 2
+* 7 8 9     1 2 3     9 6 3
+*/
+void Solution::rotate(vector<vector<int>> & matrix)
+{
+	reverse(matrix.begin(), matrix.end());
+	for (int i = 0; i < matrix.size(); ++i)
+		for (int j = i + 1; j < matrix[i].size(); ++j){
+		    swap(matrix[i][j], matrix[j][i]);
+		}
+}
+
+/*The basic idea is that we iterate through the input array and mark elements as negative using nums[nums[i] - 1] = -nums[nums[i] - 1].
+In this way all the numbers that we have seen will be marked as negative.
+In the second iteration, if a value is not marked as negative, it implies we have never seen that index before, so just add it to the return list.*/
+
+vector<int> Solution::findDisappearedNumbers(vector<int>& nums)
+{
+	int n = nums.size();
+	vector<int> result(0);
+	for (int i = 0; i < n; i++)
+	{
+		int index = abs(nums[i]) - 1;
+		if (nums[index] >= 1)
+		{
+			nums[index] = -nums[index];
+		}
+	}
+
+	for (int i = 0; i < n; i++){
+		if (nums[i] >= 1){
+			result.push_back(i + 1);
+		}
+	}
+	return result;
+}
+// when find a number i, flip the number at position i-1 to negative. 
+// if the number at position i-1 is already negative, i is the number that occurs twice.
+vector<int> Solution::findDuplicates(vector<int>& nums)
+{
+	int n = nums.size();
+	vector<int> result(0);
+	for (int i = 0; i < n; i++)
+	{
+		int index = abs(nums[i]) - 1;
+		if (nums[index] >= 1){
+			nums[index] = -nums[index];
+		}
+		else if (nums[index] <= -1)
+		{
+			result.push_back(abs(nums[i]));
+		}
+	}
+	return result;
+}
+
+
+//I traverse right and increment rowBegin, then traverse down and decrement colEnd, 
+//then I traverse left and decrement rowEnd, and finally I traverse up and increment colBegin.
+//The only tricky part is that when I traverse left or up I have to check whether the row or col still exists to prevent duplicates.
+//If anyone can do the same thing without that check, please let me know!
+vector<int> Solution::spiralOrder(vector<vector<int>> & matrix)
+{
+	vector<int> res(0);
+	if (matrix.size() == 0)
+		return res;
+	int rowBegin = 0;
+	int rowEnd = matrix.size() - 1;
+	int colBegin = 0;
+	int colEnd = matrix[0].size() - 1;
+
+	while (rowBegin <= rowEnd && colBegin <= colEnd)
+	{
+		//traverse right
+		for (int j = colBegin; j <= colEnd; j++)
+		{
+			res.push_back(matrix[rowBegin][j]);
+		}
+		rowBegin++;
+
+		//traverse down
+		for (int j = rowBegin; j <= rowEnd; j++){
+			res.push_back(matrix[j][colEnd]);
+		}
+		colEnd--;
+
+		if (rowBegin <= rowEnd){
+			//traverse left
+			for (int j = colEnd; j >= colBegin; j--){
+				res.push_back(matrix[rowEnd][j]);
+			}
+		}
+
+		rowEnd--;
+
+		//traverse up
+		if (colBegin <= colEnd){
+			for (int j = rowEnd; j >= rowBegin; j--){
+				res.push_back(matrix[j][colBegin]);
+			}
+		}	
+		colBegin++;
+	}
+	return res;
+}
+
+vector<vector<int>> Solution::generateMatrix(int n)
+{
+	vector<vector<int>> matrix(n);
+
+	if (n == 0)
+		return matrix;
+	for (int i = 0; i < n; i++)
+		matrix[i].resize(n);
+
+	//int square = n* n;
+	int value = 1;
+
+	int rowBegin = 0;
+	int rowEnd = n - 1;
+	int colBegin = 0;
+	int colEnd = n - 1;
+
+	while (rowBegin <= rowEnd && colBegin <= colEnd)
+	{
+		//traverse right
+		for (int j = colBegin; j <= colEnd; j++)
+		{
+			matrix[rowBegin][j] = value++;
+		}
+		rowBegin++;
+
+		//traverse down
+		for (int j = rowBegin; j <= rowEnd; j++){
+			matrix[j][colEnd] = value++;
+		}
+		colEnd--;
+
+		if (rowBegin <= rowEnd){
+			//traverse left
+			for (int j = colEnd; j >= colBegin; j--){
+				matrix[rowEnd][j] = value++;
+			}
+		}
+
+		rowEnd--;
+
+		//traverse up
+		if (colBegin <= colEnd){
+			for (int j = rowEnd; j >= rowBegin; j--){
+				matrix[j][colBegin] = value++;
+			}
+		}
+		colBegin++;
+	}
+
+	return matrix;
+
+}
+
+vector<int> Solution::plusOne(vector<int>& digits)
+{
+	int n = digits.size();
+	for (int i = n-1; i >= 0; i--){
+		if (digits[i] < 9){
+			digits[i] ++;
+			return digits;
+		}
+
+		digits[i] = 0;
+	}
+
+	digits[0] = 1;
+	digits.push_back(0);
+	return digits;
+}
+
+string Solution::multiply(string num1, string num2)
+{
+	string sum(num1.size() + num2.size(), '0');
+
+	for (int i = num1.size() - 1; 0 <= i; --i) {
+		int carry = 0;
+		for (int j = num2.size() - 1; 0 <= j; --j) {
+			int tmp = (sum[i + j + 1] - '0') + (num1[i] - '0') * (num2[j] - '0') + carry;
+			sum[i + j + 1] = tmp % 10 + '0';
+			carry = tmp / 10;
+		}
+		sum[i] += carry;
+	}
+
+	size_t startpos = sum.find_first_not_of("0");
+	if (string::npos != startpos) {
+		return sum.substr(startpos);
+	}
+	return "0";
+}

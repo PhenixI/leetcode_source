@@ -37,4 +37,6 @@ f:\leetcode\leetcode_source\test\test\leetcode.cpp(1100): warning C4018: “<”
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(1139): warning C4018: “<”: 有符号/无符号不匹配
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(1199): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
 f:\leetcode\leetcode_source\test\test\leetcode.cpp(1257): warning C4244: “+=”: 从“__int64”转换到“int”，可能丢失数据
+f:\leetcode\leetcode_source\test\test\leetcode.cpp(1301): warning C4018: “<”: 有符号/无符号不匹配
+f:\leetcode\leetcode_source\test\test\leetcode.cpp(1302): warning C4018: “<”: 有符号/无符号不匹配
   test.vcxproj -> F:\leetcode\leetcode_source\test\Debug\test.exe
