@@ -229,6 +229,13 @@ public:
 	*/
 	vector<int> plusOne(vector<int>& digits);
 
+	//74. Search a 2D matrix
+	/*Write an efficient algorithm that searches for a value in an m x n matrix.This matrix has the following properties :
+	    Integers in each row are sorted from left to right.
+	    The first integer of each row is greater than the last integer of the previous row.*/
+	bool searchMatrix(vector<vector<int>>& matrix, int target);
+
+
 	//78.Subsets
 	//Given a set of distinct integers, nums, return all possible subsets.
 	vector<vector<int>> subsets(vector<int>& nums);
